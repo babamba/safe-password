@@ -110,8 +110,7 @@ describe("Solution", () => {
       const mockFindEdge = jest.fn().mockImplementation(findEdge);
 
       it("findEdge func 가 정상적으로 실행되어야한다.", () => {
-        const result = mockFindEdge(mockItem, mockWidth);
-        console.log("result : ", result);
+        mockFindEdge(mockItem, mockWidth);
         expect(mockFindEdge).toHaveBeenCalled();
       });
 
