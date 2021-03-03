@@ -16,6 +16,7 @@ const commands: Command[] = [
   new CommandDeleteAllLine(),
 ];
 
+// redux reducer 처럼 Command 실행 후 액션에 대한 실행액션타입, 결과를 리턴한다.
 function getNextState(state: AppState, action: Action): AppState {
   switch (action.type) {
     case "newLine":
@@ -50,6 +51,7 @@ function getNextState(state: AppState, action: Action): AppState {
   }
 }
 async function main() {
+  //타일정보를 저장하는 변수
   let state: AppState = {
     tiles: [],
   };

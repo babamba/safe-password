@@ -22,6 +22,7 @@ export abstract class Command {
   abstract run(state: AppState): Promise<Action | void>;
 }
 
+// 입력 정보저장 명령에 대한 class
 export class CommandNewLine extends Command {
   constructor() {
     super("n", chalk`행 {red.bold 추가}하기`);
@@ -68,6 +69,7 @@ export class CommandNewLine extends Command {
   }
 }
 
+// 삭제명령에 대한 class
 export class CommandDeleteLine extends Command {
   constructor() {
     super("d", chalk`행 {red.bold 제거}하기`);
@@ -93,7 +95,7 @@ export class CommandDeleteLine extends Command {
     }
   }
 }
-
+// 입력정보 전체 삭제를 실행하는 class
 export class CommandDeleteAllLine extends Command {
   constructor() {
     super("a", chalk`전체 {red.bold 제거}하기`);
@@ -119,6 +121,7 @@ export class CommandDeleteAllLine extends Command {
   }
 }
 
+// 입력 정보를 통해 solution 함수를 실행하는 class
 export class CommandSearchSquare extends Command {
   constructor() {
     super("s", chalk`비밀번호 {red.bold 검색}하기`);
