@@ -44,8 +44,3 @@ export interface ActionDeleteAllLine {
 export interface ActionSearchSquare {
   type: "searchSquare";
 }
-
-export interface EdgeLocation {
-  x: number;
-  y: number;
-}

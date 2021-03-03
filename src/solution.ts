@@ -14,27 +14,31 @@ export const solution = (item: string[]) => {
 };
 
 export const outputLog = (findMap: FindMapItem[]) => {
-  const max = maxDimension(findMap);
-  // reduce를 이용해 배열 순회 및 비교하여 리턴 반복. dimension 값이 큰 객체 조회
-  //   const maxResult = findMap.reduce((a, b) =>
-  //     a.dimension > b.dimension ? a : b
-  //   ).dimension;
+  if (findMap) {
+    const max = maxDimension(findMap);
+    // reduce를 이용해 배열 순회 및 비교하여 리턴 반복. dimension 값이 큰 객체 조회
+    //   const maxResult = findMap.reduce((a, b) =>
+    //     a.dimension > b.dimension ? a : b
+    //   ).dimension;
 
-  for (let i = 0; i < findMap.length; i++) {
-    if (findMap[i].dimension === 0) {
-      // 2-2. 단, 직사각형이 존재하지 않는 경우 0을 출력
-      console.log(`${findMap[i].dimension} `);
-    } else {
-      if (findMap[i].dimension === max) {
-        // 2-1 & 3. 비밀번호가 되는 직사각형의 넓이 출력
-        console.log(findMap[i].dimension);
+    for (let i = 0; i < findMap.length; i++) {
+      if (findMap[i].dimension === 0) {
+        // 2-2. 단, 직사각형이 존재하지 않는 경우 0을 출력
+        console.log(`${findMap[i].dimension} `);
       } else {
-        // 4. 오류
-        console.log(
-          `${findMap[i].dimension} -> 더 큰 직사각형을 만드는 결과가 있음.`
-        );
+        if (findMap[i].dimension === max) {
+          // 2-1 & 3. 비밀번호가 되는 직사각형의 넓이 출력
+          console.log(findMap[i].dimension);
+        } else {
+          // 4. 오류
+          console.log(
+            `${findMap[i].dimension} -> 더 큰 직사각형을 만드는 결과가 있음.`
+          );
+        }
       }
     }
+  } else {
+    console.log("not found");
   }
 };
 
@@ -84,8 +88,6 @@ export const findEdge = (boardMap: Coord[], boardWidth: number) => {
               End--
             ) {
               if (boardMap[End].value === boardMap[findY].value) {
-                //console.log("find reverse x : ", boardMap[End].location);
-
                 // x 축 역순으로 찾았으면, 처음에 시작한 boardMap[i]의 y축과 동일한 값인지 비교
                 if (boardMap[End].location.x === boardMap[start].location.x) {
                   founded.push({

@@ -1,6 +1,6 @@
 import chalk from "chalk";
 import { waitForInput } from "./input";
-import { isDefineChar, regExp, isNumber, isAlphabet } from "./util";
+import { isDefineChar } from "./util";
 import { solution } from "./solution";
 import {
   Action,

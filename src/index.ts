@@ -75,15 +75,6 @@ async function main() {
       if (action) state = getNextState(state, action);
     }
   }
-  // let item = [
-  //   "BCCCCBBCAA",
-  //   "BACBBABBAA",
-  //   "BCBCAAABCB",
-  //   "BBBACBACBA",
-  //   "AAACACCBAC",
-  //   "ABBAACBCCC",
-  //   "CBAACBBCAA",
-  // ];
 }
 
 main();
