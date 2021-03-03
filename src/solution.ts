@@ -11,8 +11,6 @@ import { maxDimension } from "./util";
 export const solution = (item: string[]) => {
   console.clear();
   const board: string[][] = item.map((v) => v.split(""));
-  console.log("item : ", item);
-  console.log("board : ", board);
   const width: number = board[0].length; // x축 총길이
   const height: number = board.length; // y축 총길이
   const boardMap: Coord[] = coordinate(board, width, height); // input 정보를 가지고 좌표값과 타일 이름으로 재구조

@@ -40,7 +40,8 @@ Typescript 로 개발 진행.
 
 ### 실행 방법
 
-1. yarn 혹은 npm install 을 통해 package.json에 명시된 dependency package 설치.
+0. node.js & npm & yarn 설치
+1. 터미널에 `yarn` 입력 을 통해 package.json에 명시된 dependency package 설치.
 2. yarn start 를 통해 ts-node 동작 및 index.ts의 main 함수 실행.
 3. n을 입력하여 타일 한줄을 입력. ABC만 입력하며, 한줄이상 입력했을 시, 첫번째 줄보다 길면 자동으로 제일 첫번째 줄을 길이만큼 잘리게되며, 첫번째 줄보다 적게 작성했을 시 입력실패.
 4. d를 입력하여 행 아이디에 해당하는 파란색 번호를 입력하고 삭제한다.
